@@ -1,0 +1,5 @@
+PROBLEM: h6 and h5 both use 10.39.0.5/24
+PROBLEM: h6 and h5 both use fd00:4939::5/64
+PROBLEM: link references unknown node h10
+PROBLEM: link references unknown node s10
+Fix the description and try again.
