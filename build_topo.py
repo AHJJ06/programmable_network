@@ -59,6 +59,7 @@ def check(spec):
     problems = []
     # TODO: your code here
     
+    # Check for duplicates IPv4 and IPv6 addresses
     for field in ("ip", "ipv6"):
         addresses = {}
         
@@ -70,6 +71,15 @@ def check(spec):
                 problems.append(f"{name} and {addresses[addr]} both use {addr}")
             else:
                 addresses[addr] = name
+    
+    # Check that every link references existing nodes
+    existing_nodes = set(spec.get("switches", []))
+    existing_nodes.update(host["name"] for host in spec.get("hosts", []))
+    
+    for link in spec.get("links", []):
+        for node in link:
+            if node not in existing_nodes:
+                problems.append(f"link references unknown node {node}")
     
     return problems
 
