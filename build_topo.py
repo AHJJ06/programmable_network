@@ -58,6 +58,19 @@ def check(spec):
     """
     problems = []
     # TODO: your code here
+    
+    for field in ("ip", "ipv6"):
+        addresses = {}
+        
+        for host in spec.get("hosts", []):
+            name = host.get("name")
+            addr = host.get(field) 
+            
+            if addr in addresses:
+                problems.append(f"{name} and {addresses[addr]} both use {addr}")
+            else:
+                addresses[addr] = name
+    
     return problems
 
 
