@@ -1,0 +1,9 @@
+== h1 -> h2
+10.39.32.10 via 10.39.15.1 dev r1-eth2 src 10.39.15.2 uid 0 
+    cache 
+== h1 -> h3
+10.39.33.10 via 10.39.15.1 dev r1-eth2 src 10.39.15.2 uid 0 
+    cache 
+== h1 -> h4
+10.39.34.10 via 10.39.15.1 dev r1-eth2 src 10.39.15.2 uid 0 
+    cache 
